@@ -1,9 +1,0 @@
-[1m==================================================================== test session starts =====================================================================[0m
-platform darwin -- Python 3.9.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /usr/local/opt/python@3.9/bin/python3.9
-cachedir: .pytest_cache
-rootdir: /Users/sam/Desktop/Automation/automation
-[1mcollecting ... [0m[1mcollected 1 item                                                                                                                                             [0m
-
-tests/test_task1.py::test_task1 [32mPASSED[0m
-
-[32m===================================================================== [32m[1m1 passed[0m[32m in 11.60s[0m[32m =====================================================================[0m
