@@ -21,7 +21,7 @@ def test_task2():
 
     # Send api request
     api_url = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc"
-    response = Executor.execute(requests.get, api_url)
+    response = requests.get(api_url)
 
     # Check response status code is 200
     assert response.status_code == 200
