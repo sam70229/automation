@@ -1,0 +1,12 @@
+{
+    "exchangePage": {
+        "markets": "//button[@type='button'][text()='Markets']"
+    },
+    "marketsPage": {
+        "usdc_tab": "//div[@class='e-tabs__nav-item'][text()='USDC']",
+        "trade_btn": "//*[@class='base'][text()='coin_name_to_replace']/ancestor::tr//td[last()]//*[text()='Trade']"
+    },
+    "tradePage": {
+        "panel_title": "//*[@class='toggle'][normalize-space(text())='coin_name_to_replace']"
+    }
+}

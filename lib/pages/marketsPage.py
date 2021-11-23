@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+from pathlib import Path
 
+from lib.browser import Browser
+from lib import variable
 from lib.pages import basePage
 
 class MarketsPage(basePage.BasePage):
@@ -10,7 +13,8 @@ class MarketsPage(basePage.BasePage):
     }
 
     def switch_to_usdc_tab(self):
-        self.driver.click(self.locators["usdc_tab"])
+        xpath = self.locators["usdc_tab"]
+        self.driver.click(xpath)
 
     def click_trade_button(self, coin_name):
         xpath = self.locators["trade_btn"]

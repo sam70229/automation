@@ -4,6 +4,31 @@ import os
 import sys
 
 from config import config
+from lib import variable
+
+
+class TerminalOutput(object):
+
+    def __init__(self):
+        self.console = sys.stdout
+        if os.path.exists(config.consoleLogFile):
+            self.log = open(config.consoleLogFile, "a")
+        else:
+            self.log = open(config.consoleLogFile, "w")
+
+    def __del__(self):
+        if self.log:
+            self.log.close()
+    
+    def flush(self):
+        pass
+
+    def isatty(self):
+        return True
+
+    def write(self, message):
+        self.console.write(message)
+        self.log.write(message)
 
 logger = None
 
@@ -37,4 +62,4 @@ def initialLogger():
     logging.config.dictConfig(logConfig)
     global logger
     logger = logging.getLogger("tests")
-    # sys.stdout = open(config.stdout_file, 'w')
+    variable.logger = logging.getLogger("tests")
