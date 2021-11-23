@@ -10,4 +10,4 @@
 2. Simply just run `python3 .\Test.py -t task1` or `python3 .\Test.py -t task2` to execute test.
 
 # Todo
-[] Get failure screenshot of browser
+[ ] Get failure screenshot of browser
