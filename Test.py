@@ -9,6 +9,10 @@ from lib.utility import DataLoader
 
 
 if __name__ == "__main__":
+    # Check log folder exist
+    if not os.path.exists(config.logRootDir):
+        os.mkdir(config.logRootDir)
+
     testCaseName = ""
 
     # Parse arguments from cli

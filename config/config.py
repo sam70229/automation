@@ -17,8 +17,9 @@ chromeDriverExecutePath = os.path.join(os.getcwd(), 'bin', chrome_bin_filename[s
 ## Log config
 
 logLevel = "INFO"
-logDir = os.path.join(os.getcwd(), "logs", datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
 logFileName = "log_output.log"
+logRootDir = os.path.join(os.getcwd(), "logs")
+logDir = os.path.join(logRootDir, datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
 logFileDir = os.path.join(logDir, logFileName)
 logFormat = '%(asctime)s [%(levelname)s] %(filename)s:%(lineno)d %(funcName)s - %(message)s'
 logDatefmt = '%Y%m%d %H:%M:%s'
@@ -31,7 +32,7 @@ consoleLogFile = os.path.join(logDir, consoleLogName)
 
 ## Screenshot
 
-screenshotFilepath = os.path.join(logFileDir, "fail_screenshot.png")
+screenshotFilepath = os.path.join(logDir, "fail_screenshot.png")
 
 
 ## Data

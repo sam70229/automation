@@ -57,9 +57,13 @@ logConfig = {
 }
 
 def initialLogger():
+    # Create logger folder
     if not os.path.exists(config.logDir):
         os.mkdir(config.logDir)
+
+    # Config log settings
     logging.config.dictConfig(logConfig)
+
+    # Make it global
     global logger
     logger = logging.getLogger("tests")
-    variable.logger = logging.getLogger("tests")

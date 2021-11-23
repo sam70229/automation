@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timedelta
 
 from lib.utility import Executor
+from lib.logger import logger
 
 """
 1. Capture the related API endpoint
@@ -13,8 +14,6 @@ from lib.utility import Executor
 tomorrow from the API response (e.g. if today is Monday, then extract the relative humidity for Wednesday)
 """
 
-def setup_function():
-    pass
 
 def test_task2():
     # Get current timestamp
@@ -30,13 +29,13 @@ def test_task2():
     # Transfer to json
     json_data = json.loads(response.text)
 
+    # Get date of day after tomorrow
     dayAfterTomorrow = current_datetime + timedelta(days=2)
     dayAfterTomorrow_string = dayAfterTomorrow.strftime("%Y%m%d")
     
     for each_data in json_data["weatherForecast"]:
         if each_data["forecastDate"] == dayAfterTomorrow_string:
+            logger.logger.info(each_data["forecastMaxrh"])
+            logger.logger.info(each_data["forecastMinrh"])
             assert each_data["forecastMaxrh"] != None
             assert each_data["forecastMinrh"] != None 
-
-def teardown_function():
-    pass
